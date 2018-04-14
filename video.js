@@ -71,6 +71,7 @@
         };
         i = document.createElement("i");
         i.className = "fas fa-play-circle";
+        i.style="vertical-align: text-top;"
 
         a.appendChild(i);
         td.appendChild(a);
