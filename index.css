@@ -141,7 +141,7 @@ hr{
 #title_banner{
     font-size: 4.5em;
     overflow: hidden;
-    /*margin-right: 400px;*/
+    padding-left: 40px;
     opacity: 0;
 }
 
