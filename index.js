@@ -207,7 +207,7 @@ function loadTagBlock()
         for(var s=0; s<11; s++) timer=setTimeout(tagEmerge, 20*(k+1)+20*s, k, s*0.1);
     }
     
-    for(var s=0; s<20; s++) timer=setTimeout(titleShift, 20*s, 40-2*s, s/19);
+    for(var s=0; s<21; s++) timer=setTimeout(titleShift, 20*s, 40-2*s, s/20);
 }
 
 function tagEmerge(id, opa)
