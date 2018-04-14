@@ -15,24 +15,30 @@
 <body onload="loadAll();">
 
 
-<nav id="navigation_bar" class="navbar navbar-inverse">
+<nav id="navigation_bar" class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="./index.html">v0icetube</a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">v0icetube</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="./index.html">首頁</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">影片分類<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">分類1</a></li>
-          <li><a href="#">分類2</a></li>
-          <li><a href="#">分類3</a></li>
-        </ul>
-      </li>
-      <li><a href="#">測驗</a></li>
-    </ul>
-    
-    <div class="navbar-form navbar-left">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">首頁</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">影片分類<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">分類1</a></li>
+            <li><a href="#">分類2</a></li>
+            <li><a href="#">分類3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">測驗</a></li>
+      </ul>
+      <div class="navbar-form navbar-left">
         <div class="input-group">
             <input id="searchString" type="text" class="form-control" placeholder="Search">
             <div class="input-group-btn">
@@ -41,19 +47,19 @@
                 </button>
             </div>
         </div>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="fa fa-user"></span> 註冊</a></li>
+        <li><a href="#"><span class="fa fa-sign-in"></span> 登入</a></li>
+      </ul>
     </div>
-    
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="fa fa-user"></span> 註冊</a></li>
-      <li><a href="#"><span class="fa fa-sign-in"></span> 登入</a></li>
-    </ul>
   </div>
 </nav>
 
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top:80px;">
   <div class="jumbotron">
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4" id="jumbo">
             <h1 id="title_banner">v0icetube</h1>
         </div>
         <div class="col-sm-8">

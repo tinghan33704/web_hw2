@@ -2,7 +2,7 @@ var video=[
         {id:"Z-5zUm8U2o8", genre:"教育", lang:"英文", tag:"旅行", fav:0, name:"Things You Should NEVER Do In Other Countries!"},
         {id:"twyuPTw0AyY", genre:"娛樂", lang:"英文", tag:"動畫", fav:0, name:"Stephen Hawking's One Request When He Appeared On The Simpsons"},
         {id:"ar8S6virCwM", genre:"教育", lang:"英文", tag:"TED", fav:0, name:"A day in the life of an ancient Athenian - Robert Garland"},
-        {id:"paREY4LLwEY", genre:"娛樂", lang:"英文", tag:"預告片", fav:0, name:"HOTEL TRANSYLVANIA 3 Trailer 2 (2018)"},
+        {id:"paREY4LLwEY", genre:"娛樂", lang:"英文", tag:"預告片", fav:0, name:"Hotel Transylvania 3 Trailer 2 (2018)"},
         {id:"9bAiXJoNdy0", genre:"教育", lang:"英文", tag:"交友", fav:0, name:"One thing that makes you a better friend"},
         {id:"Y7bxlR-MxxM", genre:"教育", lang:"英文", tag:"助人", fav:0, name:"Be My Eyes - helping blind see"},
         {id:"A_DRNbpsU3Q", genre:"藝術", lang:"英文", tag:"旅行", fav:0, name:"Why Is the ‘Mona Lisa’ So Famous?"},
@@ -11,7 +11,7 @@ var video=[
         {id:"OjEkotGQxzA", genre:"教育", lang:"英文", tag:"街訪", fav:0, name:"Proper British English on the Streets of London - B2 Listening"}];
 
 var tag=[["教育", "娛樂", "藝術", "新聞", "體育"], ["英文", "中文"], ["旅行", "TED", "助人", "政治", "交友", "預告片"]];        
-        
+var slogan = ["事出必有因", "當個後知後覺者", "我們來試試看好不好", "我們來 kahoot 一下"];
 function Mark(e, id)
 {
 	var m = e.getElementsByTagName("i")[0];
@@ -50,7 +50,7 @@ function cardStruct(i)
 function sidebarStruct(i, type)
 {
     var str="";
-    str+="<a href=\"video.html?v="+video[i].id+"\">";
+    str+="<a href=\"video.html?v="+video[i].id+"\" title=\""+video[i].name+"\">";
     str+="<img src=\"http://img.youtube.com/vi/"+video[i].id+"/sddefault.jpg\"></img>";
     str+="<div class=\""+type+"\">"+video[i].name+"</div></a>";
     
@@ -156,7 +156,7 @@ function randomGenerator(head, tail, num)
 
 function loadFeatured()
 {
-    var str="<h3 class=\"sidebar-title\">精選影片</h3><br>";
+    var str="<h3 class=\"sidebar-title\">精選影片</h3><hr>";
     var cnt=0;
     var res=[];
     var arr=randomGenerator(0, video.length, 3);
@@ -166,7 +166,7 @@ function loadFeatured()
 
 function loadRecommend()
 {
-    var str="<h3 class=\"sidebar-title\">推薦影片</h3><br>";
+    var str="<h3 class=\"sidebar-title\">推薦影片</h3><hr>";
     var cnt=0;
     var res=[];
     var arr=randomGenerator(0, video.length, 3);
@@ -178,6 +178,8 @@ function loadTagBlock()
 {
     var str="";
     var cnt=0;
+    var idx = randomGenerator(0,slogan.length,1);
+    document.getElementById("jumbo").innerHTML += "<h4>"+slogan[idx]+"</h4>";
     for(var i=0; i<Math.min(tag[0].length, 6); i++)
     {
         str+="<div id=\"tag_block_"+cnt+"\" class=\"col-sm-2\" style=\"opacity: 0;\"><button type=\"button\" class=\"btn btn-block btn-success\" title=\""+tag[0][i]+"\" onclick=\"searchByTag('"+tag[0][i]+"', 'genre');\">"+tag[0][i]+"</button></div>";
@@ -217,6 +219,6 @@ function tagEmerge(id, opa)
 
 function titleShift(offset, opa)
 {
-    document.getElementById("title_banner").style.paddingLeft=offset+"px";
-    document.getElementById("title_banner").style.opacity=opa;
+    document.getElementById("jumbo").style.paddingLeft=offset+"px";
+    document.getElementById("jumbo").style.opacity=opa;
 }
